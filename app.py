@@ -42,9 +42,8 @@ def uqunhttpstatus():
     """异步邮件"""
     msg = Message("U群HttpStatus", recipients=["op-notice@baijiahulian.com"])
     msg.add_recipient("liyuan@baijiahulian.com")
-    msg.body = "级别" + ": " + rule_level + "\n" + "状态码" + status + "\n" + "numhits" + num_hits + "\n" + "path" + ": " + path + "\n" + "request: " + requestV1 + "\n"\
-               + "nummatchs：" + num_matches + "\n" + "referrer: " + referrer + "\n" + "agent：" + agent + "\n"
-    """异步发邮件"""
+    msg.body = "级别: " + rule_level + "\n" + "状态码: " + str(status) + "\n" + "numhits: " + str(num_hits) + "\n" + "path: " + path + "\n" + "request: " + requestV1 + "\n" + "nummatchs：" \
+               + str(num_matches) + "\n" + "referrer: " + referrer + "\n" + "agent：" + agent
     thr = threading.Thread(target=send_async_email, args=[app, msg])
     thr.start()
     return jsonify({"code": 200})
@@ -65,8 +64,9 @@ def haokehttpstatus():
     """异步邮件"""
     msg = Message("好课HttpStatus", recipients=["op-notice@baijiahulian.com"])
     msg.add_recipient("zhuxingtao@baijiahulian.com")
-    msg.body = "级别" + ": " + rule_level + "\n" + "状态码" + status + "\n" + "numhits" + num_hits + "\n" + "path" + ": " + path + "\n" + "request: " + requestV1 + "\n"\
-               + "nummatchs：" + num_matches + "\n" + "referrer: " + referrer + "\n" + "agent：" + agent + "\n"
+    msg.body = "级别: " + rule_level + "\n" + "状态码: " + str(status) + "\n" + "numhits: " + str(
+        num_hits) + "\n" + "path: " + path + "\n" + "request: " + requestV1 + "\n" + "nummatchs：" \
+               + str(num_matches) + "\n" + "referrer: " + referrer + "\n" + "agent：" + agent
     """异步发邮件"""
     thr = threading.Thread(target=send_async_email, args=[app, msg])
     thr.start()
@@ -86,8 +86,9 @@ def gaotuttpstatus():
     """异步邮件"""
     msg = Message("高途HttpStatus", recipients=["op-notice@baijiahulian.com"])
     msg.add_recipient("chenbixia@baijiahulian.com")
-    msg.body = "级别" + ": " + rule_level + "\n" + "状态码" + status + "\n" + "numhits" + num_hits + "\n" + "path" + ": " + path + "\n" + "request: " + requestV1 + "\n"\
-               + "nummatchs：" + num_matches + "\n" + "referrer: " + referrer + "\n" + "agent：" + agent + "\n"
+    msg.body = "级别: " + rule_level + "\n" + "状态码: " + str(status) + "\n" + "numhits: " + str(
+        num_hits) + "\n" + "path: " + path + "\n" + "request: " + requestV1 + "\n" + "nummatchs：" \
+               + str(num_matches) + "\n" + "referrer: " + referrer + "\n" + "agent：" + agent
     """异步发邮件"""
     thr = threading.Thread(target=send_async_email, args=[app, msg])
     thr.start()
