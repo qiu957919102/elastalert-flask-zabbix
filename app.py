@@ -11,6 +11,8 @@ import threading
 import sh
 app = Flask(__name__)
 
+"""hits表示规则命中条数；matches表示规则命中条数，并且匹配规则触发告警数"""
+
 
 """邮件服务配置"""
 app.config['MAIL_SERVER'] = 'smtpproxy.baijiahulian.com'
