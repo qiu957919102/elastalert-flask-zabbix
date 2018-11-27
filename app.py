@@ -15,11 +15,11 @@ app = Flask(__name__)
 
 
 """邮件服务配置"""
-app.config['MAIL_SERVER'] = 'smtpproxy.baijiahulian.com'
+app.config['MAIL_SERVER'] = ''
 app.config['MAIL_PORT'] = 25
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_DEBUG'] = True
-app.config['MAIL_DEFAULT_SENDER'] = 'op@baijiahulian.com'
+app.config['MAIL_DEFAULT_SENDER'] = ''
 mail = Mail(app)
 """异步发送邮件"""
 def send_async_email(app, msg):
