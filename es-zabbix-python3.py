@@ -15,7 +15,7 @@ class EsDump:
     def __init__(self, es_host):
         self.es_host = es_host
         try:
-            self.es = elasticsearch.Elasticsearch([es_host, '172.16.5.4', '172.16.5.13'], http_auth=('elastic','changeme'))
+            self.es = elasticsearch.Elasticsearch([es_host, '', ''], http_auth=('*','*'))
         except Exception as e:
             print(e)
     def echo(self, dsl_body):
